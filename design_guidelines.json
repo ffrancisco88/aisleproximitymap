@@ -1,0 +1,124 @@
+{
+  "project_name": "ProximityMap AI",
+  "theme": "light",
+  "archetype": "Archetype 4: Swiss & High-Contrast (Light)",
+  "emotional_tone": "Precise, helpful, frictionless, authoritative mapping",
+  "colors": {
+    "backgrounds": {
+      "app": "#F9FAFB",
+      "card": "#FFFFFF",
+      "map_canvas": "#E4E4E7",
+      "bottom_sheet": "#FFFFFF"
+    },
+    "text": {
+      "primary": "#0A0A0A",
+      "secondary": "#52525B",
+      "inverse": "#FFFFFF",
+      "accent": "#0055FF"
+    },
+    "brand": {
+      "primary": "#0A0A0A",
+      "wayfinding_blue": "#0055FF",
+      "promo_orange": "#FF4500",
+      "beacon_green": "#10B981"
+    },
+    "borders": {
+      "subtle": "#E4E4E7",
+      "focus": "#0055FF",
+      "contrast": "#0A0A0A"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "heading": "Outfit, sans-serif",
+      "body": "Manrope, sans-serif"
+    },
+    "scales": {
+      "h1_hero": "text-4xl sm:text-5xl tracking-tight leading-none font-bold text-zinc-900",
+      "h2_section": "text-2xl sm:text-3xl tracking-tight leading-snug font-semibold text-zinc-900",
+      "h3_widget": "text-lg sm:text-xl tracking-tight font-medium text-zinc-900",
+      "body": "text-base leading-relaxed text-zinc-600",
+      "label": "text-xs uppercase tracking-[0.2em] font-bold text-zinc-500"
+    }
+  },
+  "layout_strategies": {
+    "admin_dashboard": {
+      "type": "Control Room Grid",
+      "structure": "Sidebar left (w-64 or w-72), Map Config View right (flex-1). The map canvas takes up 100% of the available area in the right pane. Floating control panels on top of the map for tools (drag beacons, define aisles).",
+      "spacing": "Dense, utilitarian spacing. Container padding p-4 to p-6."
+    },
+    "customer_mobile": {
+      "type": "Immersive Map View",
+      "structure": "Full-screen map viewer using react-zoom-pan-pinch. Top floating glassmorphic bar for search. Bottom sheet (drawer) for route steps, aisle navigation, and proximity promos.",
+      "spacing": "Mobile-first, touch-friendly. 16px to 24px container paddings, minimum 48px touch targets."
+    }
+  },
+  "components": {
+    "interactive_map": {
+      "wrapper": "react-zoom-pan-pinch for pan/zoom logic.",
+      "container": "relative overflow-hidden w-full h-full bg-zinc-200 border border-zinc-300 rounded-xl",
+      "floor_plan_image": "absolute inset-0 object-contain w-full h-full opacity-90 mix-blend-multiply",
+      "beacon_marker": "absolute w-4 h-4 rounded-full bg-emerald-500 border-2 border-white shadow-md z-10. Animate pulse for active state.",
+      "user_location_dot": "absolute w-5 h-5 rounded-full bg-blue-600 border-2 border-white shadow-[0_0_15px_rgba(0,85,255,0.6)] z-20.",
+      "routing_path": "SVG dashed line connecting aisle nodes, colored in brand wayfinding_blue with stroke-dasharray animation."
+    },
+    "admin_sidebar": {
+      "style": "bg-white border-r border-zinc-200 h-screen p-6 flex flex-col gap-8",
+      "links": "flex items-center gap-3 p-3 rounded-lg hover:bg-zinc-100 text-zinc-600 hover:text-zinc-900 transition-colors"
+    },
+    "bottom_sheet_customer": {
+      "style": "fixed bottom-0 left-0 right-0 bg-white rounded-t-3xl shadow-[0_-10px_40px_rgba(0,0,0,0.1)] p-6 z-50",
+      "drag_handle": "w-12 h-1.5 bg-zinc-300 rounded-full mx-auto mb-6"
+    },
+    "promo_toast": {
+      "style": "fixed top-20 left-4 right-4 bg-orange-500 text-white p-4 rounded-2xl shadow-xl flex items-center gap-4 z-50 overflow-hidden",
+      "animation": "Slide in from top, gentle bounce."
+    },
+    "shadcn_overrides": {
+      "Card": "border-zinc-200 shadow-sm rounded-xl overflow-hidden bg-white",
+      "Button": "rounded-lg font-medium transition-transform active:scale-95. Primary is solid black, accent is blue."
+    }
+  },
+  "motion_and_interactions": {
+    "hover_states": "Buttons lift slightly (-translate-y-0.5) and gain a soft shadow.",
+    "beacon_pulse": "Framer motion infinite pulse animation for active ESP32 beacons (scale 1 to 1.5, opacity 0.8 to 0).",
+    "route_draw": "SVG path stroke-dashoffset animation to simulate drawing the path to the aisle."
+  },
+  "media": {
+    "images": {
+      "floor_plan_default": {
+        "url": "https://static.prod-images.emergentagent.com/jobs/418b6d3b-3fc8-49de-bc98-434229d12206/images/f35f567424e0dc6b1be3818ab65f6e8a769aab5dc5a6a18fdba566bbb11da3d6.png",
+        "description": "Minimal architectural floor plan for admin setup and customer map view."
+      },
+      "promo_icon_3d": {
+        "url": "https://static.prod-images.emergentagent.com/jobs/418b6d3b-3fc8-49de-bc98-434229d12206/images/47bb30f84c421d24eca6675d392644ad283e4b400f6c3da5ab333465593813e5.png",
+        "description": "3D promo icon to use in proximity marketing toast notifications."
+      },
+      "product_grocery_1": {
+        "url": "https://images.unsplash.com/photo-1719427129658-95dcc15f2977?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHwyfHxyZXRhaWwlMjBzdG9yZSUyMGFpc2xlJTIwcHJvZHVjdHN8ZW58MHx8fHwxNzc5MDIwNDEzfDA&ixlib=rb-4.1.0&q=85",
+        "description": "Grocery store filled with foods - background or category image."
+      },
+      "product_grocery_2": {
+        "url": "https://images.unsplash.com/photo-1774273177331-4c19e9912071?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHwzfHxyZXRhaWwlMjBzdG9yZSUyMGFpc2xlJTIwcHJvZHVjdHN8ZW58MHx8fHwxNzc5MDIwNDEzfDA&ixlib=rb-4.1.0&q=85",
+        "description": "Person walking down stocked aisle."
+      },
+      "product_item": {
+        "url": "https://images.unsplash.com/photo-1606824722920-4c652a70f348?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHwxfHxyZXRhaWwlMjBzdG9yZSUyMGFpc2xlJTIwcHJvZHVjdHN8ZW58MHx8fHwxNzc5MDIwNDEzfDA&ixlib=rb-4.1.0&q=85",
+        "description": "Yellow and green box - sample product image for search results."
+      }
+    }
+  },
+  "testing_attributes": {
+    "data_testid_rules": "All interactive elements MUST have role-based, kebab-case data-testid attributes (e.g., admin-sidebar-upload-map, customer-search-input, customer-promo-toast)."
+  },
+  "instructions_to_main_agent": [
+    "Install `react-zoom-pan-pinch` for the floor plan viewer. The map must support pinch-to-zoom on mobile and wheel zoom on desktop.",
+    "Use `framer-motion` for animating the 'you are here' dot and proximity promo popups.",
+    "Admin and Mobile views should be separated logically in routing (e.g. /admin vs /).",
+    "Admin dashboard must implement a split pane layout where the left is a configuration sidebar, and the right is a large interactive canvas.",
+    "Customer view must be strictly mobile-first. A full-screen map with overlaid search bar at top and a bottom sheet for directions/info.",
+    "Overlay HTML/SVG elements on top of the image in the zoom-pan container to represent the ESP32 beacons and user's location dot.",
+    "Use sonner or a custom absolute overlay for proximity promo toasts so they appear prominent and actionable over the map.",
+    "Ensure high-contrast text rendering. Use the specified fonts (Outfit for headers, Manrope for body text)."
+  ]
+}

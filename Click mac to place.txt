@@ -1,0 +1,62 @@
+
+====ESP 32 Beacon 1 NW ======
+Click map to place
+Label
+PMAI-Beacon-1
+BLE MAC Address
+90:70:69:31:db:b1
+Wi-Fi MAC Address
+90:70:69:31:db:b0
+Wi-Fi SSID (SoftAP)
+ESP32_BEACON_A
+TX Power @ 1m (dBm)
+-59
+
+================================
+
+curl -X POST http://192.168.254.152:8001/api/seed/demo
+
+============================
+
+
+====ESP 32 Beacon 2 SE ======
+Click map to place
+Label
+ESP32_BEACON_B
+BLE MAC Address
+90:70:69:31:f0:09
+Wi-Fi MAC Address
+90:70:69:31:f0:08
+Wi-Fi SSID (SoftAP)
+ESP32_BEACON_B
+TX Power @ 1m (dBm)
+-59
+
+================================
+
+====ESP 32 Beacon 3 SE ======
+Click map to place
+Label
+ESP32_BEACON_C
+BLE MAC Address
+90:70:69:31:EE:3A
+Wi-Fi MAC Address
+90:70:69:31:EE:30
+Wi-Fi SSID (SoftAP)
+ESP32_BEACON_C
+TX Power @ 1m (dBm)
+-59
+
+=================================
+====ESP 32 Beacon 4 SE ======
+Click map to place
+Label
+ESP32_BEACON_D
+BLE MAC Address
+90:70:69:31:ee:e1
+Wi-Fi MAC Address
+90:70:69:31:ee:e0
+Wi-Fi SSID (SoftAP)
+ESP32_BEACON_D
+TX Power @ 1m (dBm)
+-59
