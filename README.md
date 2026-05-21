@@ -60,7 +60,7 @@ Full setup README
 git clone <YOUR_REPO_URL> proximitymap
 cd proximitymap
 ```
-> Or just copy the `/app` folder from this Emergent project to your PC.
+> Or just copy the `/app` folder from this project to your PC.
 
 ## 5. Configure backend env
 Create `backend/.env`:
